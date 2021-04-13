@@ -1,0 +1,21 @@
+FROM ubuntu:18.04
+
+RUN apt-get update
+RUN apt-get upgrade
+RUN apt-get install -y git
+RUN apt-get install -y wget
+RUN apt-get install -y unzip
+RUN apt-get install -y vim
+
+# Install JDK
+RUN apt install -y openjdk-11-jdk
+
+# Downlad gradle
+RUN wget https://services.gradle.org/distributions/gradle-6.5.1-bin.zip -P /tmp
+
+# Unzip gradle
+RUN unzip -d /opt/gradle /tmp/gradle-*.zip
+
+
+
+
